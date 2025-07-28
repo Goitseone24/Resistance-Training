@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -12,65 +12,78 @@ document.addEventListener('DOMContentLoaded', function () {
     // Exercise card hover effects
     const exerciseCards = document.querySelectorAll('.exercise-card');
     exerciseCards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            const gif = this.querySelector('.exercise-gif img');
-            gif.style.transform = 'scale(1.1)';
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.querySelector('.exercise-gif img').style.transform = 'scale(1.1)';
         });
-
-        card.addEventListener('mouseleave', function () {
-            const gif = this.querySelector('.exercise-gif img');
-            gif.style.transform = 'scale(1)';
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.querySelector('.exercise-gif img').style.transform = '';
         });
     });
 
-    // Animate elements when they come into view
-    const animateOnScroll = function () {
-        const elements = document.querySelectorAll('.feature-card, .exercise-card');
-
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-
-    // Set initial state for animation
-    const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
-    });
-
-    const exerciseCardsAll = document.querySelectorAll('.exercise-card');
-    exerciseCardsAll.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
-    });
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
-
-    // Form validation (from previous implementation)
+    // Form validation
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Validation logic here
-        });
+        contactForm.addEventListener('submit', function(e) {
+            if (!this.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            this.classList.add('was-validated');
+        }, false);
     }
 
     // BMI Calculator
     const bmiForm = document.getElementById('bmiForm');
     if (bmiForm) {
-        bmiForm.addEventListener('submit', function (e) {
+        bmiForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // BMI calculation logic here
+            if (bmiForm.checkValidity()) {
+                calculateBMI();
+            }
+            bmiForm.classList.add('was-validated');
         });
+    }
+
+    function calculateBMI() {
+        const height = parseFloat(document.getElementById('height').value) / 100;
+        const weight = parseFloat(document.getElementById('weight').value);
+        const age = parseInt(document.getElementById('age').value) || 30;
+        
+        const bmi = weight / (height * height);
+        document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+        
+        // Determine BMI category
+        let category = '';
+        if (bmi < 18.5) {
+            category = 'Underweight';
+            document.getElementById('bmiCategory').className = 'metric-category text-info';
+        } else if (bmi < 25) {
+            category = 'Normal weight';
+            document.getElementById('bmiCategory').className = 'metric-category text-success';
+        } else if (bmi < 30) {
+            category = 'Overweight';
+            document.getElementById('bmiCategory').className = 'metric-category text-warning';
+        } else {
+            category = 'Obese';
+            document.getElementById('bmiCategory').className = 'metric-category text-danger';
+        }
+        document.getElementById('bmiCategory').textContent = category;
+        
+        // Calculate heart rate zones
+        const maxHr = 220 - age;
+        document.getElementById('maxHrValue').textContent = maxHr + ' bpm';
+        
+        const moderateMin = Math.round(maxHr * 0.50);
+        const moderateMax = Math.round(maxHr * 0.70);
+        document.getElementById('moderateRange').textContent = moderateMin + '-' + moderateMax + ' bpm';
+        
+        const vigorousMin = Math.round(maxHr * 0.70);
+        const vigorousMax = Math.round(maxHr * 0.85);
+        document.getElementById('vigorousRange').textContent = vigorousMin + '-' + vigorousMax + ' bpm';
+        
+        // Show results
+        document.getElementById('bmiResult').style.display = 'block';
     }
 });

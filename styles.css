@@ -132,6 +132,53 @@ body {
 .workout-option-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+} 
+
+.nutrition-hero {
+    background-image: url('../images/backgrounds/nutrition-bg.jpg');
+    min-height: 60vh;
+}
+
+.food-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.meal-plan-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary);
+}
+
+.meal-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.meal-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.meal-list li:last-child {
+    border-bottom: none;
+}
+
+.nutrition-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nutrition-list li {
+    padding: 0.5rem 0;
 }
 /* Footer */
 .footer-wave {

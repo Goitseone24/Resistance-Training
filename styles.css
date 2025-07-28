@@ -91,7 +91,113 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
+/* ====================== */
+/* Enhanced Calisthenics Styles */
+/* ====================== */
 
+.calisthenics-hero {
+    min-height: 60vh;
+    background-position: center 30%;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+    color: var(--primary);
+}
+
+.program-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.program-header {
+    padding: 1rem 1.5rem;
+}
+
+.program-body {
+    background: white;
+}
+
+.exercise-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.exercise-card:hover {
+    background-color: rgba(255, 71, 87, 0.05);
+    border-color: var(--primary-light);
+}
+
+.exercise-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-primary-light {
+    background-color: rgba(255, 71, 87, 0.1);
+}
+
+.tips-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tips-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.tips-list li:before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+.download-card {
+    transition: all 0.3s ease;
+}
+
+.download-card:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .program-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .program-meta {
+        margin-top: 0.5rem;
+    }
+    
+    .calisthenics-hero {
+        min-height: 50vh;
+    }
+}
 .exercise-gif {
     height: 200px;
     overflow: hidden;

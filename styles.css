@@ -79,6 +79,60 @@ body {
     transition: transform 0.5s ease;
 }
 
+.study-reference {
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s ease;
+    margin: 1.5rem 0;
+    padding: 1rem;
+}
+
+.study-reference:hover {
+    background-color: rgba(255, 71, 87, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Routine cards */
+.routine-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.routine-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary-light);
+}
+
+.routine-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.routine-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.routine-list li:last-child {
+    border-bottom: none;
+}
+
+.routine-list strong {
+    color: var(--primary);
+}
+
+/* Workout option cards */
+.workout-option-card {
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.workout-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 /* Footer */
 .footer-wave {
     position: relative;

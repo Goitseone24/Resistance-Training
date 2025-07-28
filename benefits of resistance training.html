@@ -1,23 +1,38 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Benefits for Heart Health | FitHeart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="tmp2065.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as index.html) -->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
-            <!-- Navigation content same as index.html -->
+            <div class="container">
+                <a class="navbar-brand pulse-animation" href="index.html">
+                    <img src="images/icons/heart-logo.png" alt="FitHeart Logo" width="100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="benefits.html">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nutrition.html">Nutrition</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Benefits Hero Section -->
-    <section class="benefits-hero parallax">
+    <section class="benefits-hero" style="background-image: url('images/backgrounds/benefits-bg.jpg')">
         <div class="hero-overlay"></div>
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -29,23 +44,21 @@
         </div>
     </section>
 
-    <!-- Benefits Main Content -->
     <main class="container py-5">
-        <!-- Calisthenics Benefits -->
         <section class="benefit-section mb-5 animate__animated animate__fadeIn">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="benefit-media">
-                        <img src=https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif width="200">
-                        <div class="play-button" data-bs-toggle="modal" data-bs-target="#calisthenicsVideo">
+                        <img src="images/exercise-gifs/pull-up.gif" alt="Pull up exercise" class="img-fluid rounded shadow">
+                        <button class="play-button" data-bs-toggle="modal" data-bs-target="#calisthenicsVideo">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="text-primary">Calisthenics for Hypertension</h2>
-                    <div class="benefit-stats">
-                        <div class="stat-card">
+                    <h2 class="text-primary mb-4">Calisthenics for Hypertension</h2>
+                    <div class="benefit-stats d-flex mb-4">
+                        <div class="stat-card me-3">
                             <div class="stat-value">5-10</div>
                             <div class="stat-label">mmHg reduction in BP</div>
                         </div>
@@ -54,32 +67,31 @@
                             <div class="stat-label">Lower heart disease risk</div>
                         </div>
                     </div>
-                    <p>Bodyweight exercises provide gentle yet effective cardiovascular conditioning:</p>
-                    <ul class="benefit-list">
-                        <li><i class="fas fa-heartbeat text-danger"></i> Improves blood vessel elasticity</li>
-                        <li><i class="fas fa-lungs text-info"></i> Enhances oxygen utilization</li>
-                        <li><i class="fas fa-weight text-warning"></i> Reduces arterial stiffness</li>
+                    <p class="lead">Bodyweight exercises provide gentle yet effective cardiovascular conditioning:</p>
+                    <ul class="benefit-list list-unstyled">
+                        <li class="mb-2"><i class="fas fa-heartbeat text-danger me-2"></i> Improves blood vessel elasticity</li>
+                        <li class="mb-2"><i class="fas fa-lungs text-info me-2"></i> Enhances oxygen utilization</li>
+                        <li class="mb-3"><i class="fas fa-weight text-warning me-2"></i> Reduces arterial stiffness</li>
                     </ul>
-                    <a href="workouts.html#calisthenics" class="btn btn-primary mt-3">View Calisthenics Routines</a>
+                    <a href="workouts.html#calisthenics" class="btn btn-primary btn-lg mt-3">View Calisthenics Routines</a>
                 </div>
             </div>
         </section>
 
-        <!-- Weightlifting Benefits -->
         <section class="benefit-section mb-5 animate__animated animate__fadeIn">
             <div class="row align-items-center flex-lg-row-reverse">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="benefit-media">
-                        <img src=https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Shoulder-Press.gif width="200">
-                        <div class="play-button" data-bs-toggle="modal" data-bs-target="#weightliftingVideo">
+                        <img src="images/exercise-gifs/shoulder-press.gif" alt="Shoulder press exercise" class="img-fluid rounded shadow">
+                        <button class="play-button" data-bs-toggle="modal" data-bs-target="#weightliftingVideo">
                             <i class="fas fa-play"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="text-primary">Weightlifting & Heart Health</h2>
-                    <div class="benefit-stats">
-                        <div class="stat-card">
+                    <h2 class="text-primary mb-4">Weightlifting & Heart Health</h2>
+                    <div class="benefit-stats d-flex mb-4">
+                        <div class="stat-card me-3">
                             <div class="stat-value">7%</div>
                             <div class="stat-label">Increase in HDL</div>
                         </div>
@@ -88,60 +100,77 @@
                             <div class="stat-label">Better glucose control</div>
                         </div>
                     </div>
-                    <p>Controlled resistance training offers unique cardiovascular benefits:</p>
-                    <ul class="benefit-list">
-                        <li><i class="fas fa-heart text-danger"></i> Strengthens cardiac muscles</li>
-                        <li><i class="fas fa-chart-line text-success"></i> Improves cholesterol profiles</li>
-                        <li><i class="fas fa-burn text-warning"></i> Boosts metabolic rate</li>
+                    <p class="lead">Controlled resistance training offers unique cardiovascular benefits:</p>
+                    <ul class="benefit-list list-unstyled">
+                        <li class="mb-2"><i class="fas fa-heart text-danger me-2"></i> Strengthens cardiac muscles</li>
+                        <li class="mb-2"><i class="fas fa-chart-line text-success me-2"></i> Improves cholesterol profiles</li>
+                        <li class="mb-3"><i class="fas fa-burn text-warning me-2"></i> Boosts metabolic rate</li>
                     </ul>
-                    <a href="workouts.html#weightlifting" class="btn btn-primary mt-3">View Weightlifting Plans</a>
+                    <a href="workouts.html#weightlifting" class="btn btn-primary btn-lg mt-3">View Weightlifting Plans</a>
                 </div>
             </div>
         </section>
 
-        <!-- Scientific Evidence Section -->
-        <section class="evidence-section py-5 bg-light rounded-4">
-            <h2 class="text-center mb-5">Scientific Evidence</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="evidence-card">
-                        <div class="evidence-icon">
-                            <i class="fas fa-book-open"></i>
+        <section class="evidence-section py-5 bg-light rounded-4 mb-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Scientific Evidence</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="evidence-card p-4 h-100">
+                            <div class="evidence-icon mb-3">
+                                <i class="fas fa-book-open fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4">American Heart Association</h3>
+                            <p class="mb-3">"Regular resistance training can lower systolic blood pressure by an average of 5-7 mmHg in hypertensive individuals."</p>
+                            <a href="#" class="btn btn-outline-primary">Read Study</a>
                         </div>
-                        <h3>American Heart Association</h3>
-                        <p>"Regular resistance training can lower systolic blood pressure by an average of 5-7 mmHg in hypertensive individuals."</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Read Study</a>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="evidence-card">
-                        <div class="evidence-icon">
-                            <i class="fas fa-flask"></i>
+                    <div class="col-md-6">
+                        <div class="evidence-card p-4 h-100">
+                            <div class="evidence-icon mb-3">
+                                <i class="fas fa-flask fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4">Journal of Hypertension</h3>
+                            <p class="mb-3">"Combined aerobic and resistance exercise provides superior blood pressure reduction compared to either modality alone."</p>
+                            <a href="#" class="btn btn-outline-primary">Read Study</a>
                         </div>
-                        <h3>Journal of Hypertension</h3>
-                        <p>"Combined aerobic and resistance exercise provides superior blood pressure reduction compared to either modality alone."</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Read Study</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Video Modals -->
-        <div class="modal fade" id="calisthenicsVideo" tabindex="-1">
-            <!-- Modal content same as previous implementation -->
-        </div>
-        <div class="modal fade" id="weightliftingVideo" tabindex="-1">
-            <!-- Modal content same as previous implementation -->
-        </div>
     </main>
 
-    <!-- Footer (same as index.html) -->
-    <footer class="footer-wave">
-        <!-- Footer content same as index.html -->
+    <footer class="footer-wave bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="images/icons/heart-logo-white.png" alt="FitHeart Logo" width="100" class="mb-3">
+                    <p>Helping hearts get stronger through safe exercise.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="benefits.html" class="text-white">Exercise Benefits</a></li>
+                        <li class="mb-2"><a href="workouts.html" class="text-white">Workout Plans</a></li>
+                        <li><a href="nutrition.html" class="text-white">Nutrition Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">© 2023 FitHeart. Consult your doctor before beginning any exercise program.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
-    <script src="resistance.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

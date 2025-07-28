@@ -8,7 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
     });
-
+// Enable workout dropdown hover (optional)
+const workoutDropdown = document.getElementById('workoutsDropdown');
+if (workoutDropdown) {
+    workoutDropdown.addEventListener('mouseenter', function() {
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.classList.add('show');
+    });
+    
+    const navbar = document.querySelector('.navbar');
+    navbar.addEventListener('mouseleave', function() {
+        const openDropdown = document.querySelector('.dropdown-menu.show');
+        if (openDropdown) {
+            openDropdown.classList.remove('show');
+        }
+    });
+}
     // Exercise card hover effects
     const exerciseCards = document.querySelectorAll('.exercise-card');
     exerciseCards.forEach(card => {

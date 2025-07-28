@@ -3,280 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | FitHeart</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="css/styles.css" rel="stylesheet">
+    <title>FitHeart | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse your existing CSS variables and base styles */
+        :root {
+            --primary: #ff4757;
+            --primary-light: #ff6b81;
+            --secondary: #57606f;
+            --light: #f1f2f6;
+            --dark: #2f3542;
+            --success: #2ed573;
+            --warning: #ffa502;
+            --danger: #ff4757;
+            --info: #1e90ff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Reuse your navbar styles */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 18px 0;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Hero */
+        .contact-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 50px;
+            max-width: 800px;
+            margin: -50px auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Footer (reuse your existing footer styles) */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .contact-card {
+                padding: 30px;
+                margin-top: -30px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="sticky-top">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
-            <div class="container">
-                <a class="navbar-brand pulse-animation" href="index.html">
-                    <img src="images/icons/heart-logo.png" alt="FitHeart Logo" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="nutrition.html">Nutrition</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section class="contact-hero" style="background-image: url('images/backgrounds/contact-bg.jpg')">
-        <div class="hero-overlay"></div>
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 text-center text-white">
-                    <h1 class="display-3 animate__animated animate__fadeInDown">We're Here to Help</h1>
-                    <p class="lead animate__animated animate__fadeInUp">Get personalized advice for your heart health journey</p>
-                    <a href="#contact-form" class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite">Contact Us Now</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FitHeart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#workouts">Workouts</a></li>
+                <li><a href="index.html#exercises">Exercises</a></li>
+                <li><a href="index.html#nutrition">Nutrition</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you about your fitness journey</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-card">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="training">Training Questions</option>
+                            <option value="nutrition">Nutrition Advice</option>
+                            <option value="feedback">Website Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Our Location</h3>
+                        <p>123 Fitness Street<br>Health City, HC 12345</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>info@fitheart.com<br>support@fitheart.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 (555) 123-4567<br>Mon-Fri, 9am-5pm EST</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-7">
-                <div class="contact-card shadow-sm animate__animated animate__fadeInLeft">
-                    <h2 class="mb-4" id="contact-form">Send Us a Message</h2>
-                    <form id="contactForm" class="needs-validation" novalidate>
-                        <div class="mb-4">
-                            <label for="name" class="form-label">Your Name *</label>
-                            <input type="text" class="form-control" id="name" required aria-required="true">
-                            <div class="invalid-feedback">Please provide your name.</div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" class="form-control" id="email" required aria-required="true">
-                            <div class="invalid-feedback">Please provide a valid email.</div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="subject" class="form-label">Subject *</label>
-                            <select class="form-select" id="subject" required aria-required="true">
-                                <option value="" selected disabled>Select a topic</option>
-                                <option value="exercise">Exercise Questions</option>
-                                <option value="nutrition">Nutrition Advice</option>
-                                <option value="hypertension">Hypertension Concerns</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
-                            <div class="invalid-feedback">Please select a subject.</div>
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="form-label">Your Message *</label>
-                            <textarea class="form-control" id="message" rows="5" required aria-required="true"></textarea>
-                            <div class="invalid-feedback">Please enter your message.</div>
-                        </div>
-                        <div class="mb-4 form-check">
-                            <input type="checkbox" class="form-check-input" id="consent" required aria-required="true">
-                            <label class="form-check-label" for="consent">I agree to the <a href="privacy.html">privacy policy</a> *</label>
-                            <div class="invalid-feedback">You must agree before submitting.</div>
-                        </div>
-                        <div class="g-recaptcha mb-4" data-sitekey="your-site-key"></div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
-                            <i class="fas fa-paper-plane me-2"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="col-lg-5">
-                <div class="info-card shadow-sm animate__animated animate__fadeInRight">
-                    <h2 class="mb-4">Contact Information</h2>
-
-                    <div class="contact-method d-flex mb-4">
-                        <div class="contact-icon bg-primary rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="fas fa-map-marker-alt fa-lg text-white"></i>
-                        </div>
-                        <div class="contact-details ms-3">
-                            <h3 class="h5">Our Location</h3>
-                            <address class="mb-0">
-                                123 Heart Health Way<br>
-                                Cardio City, CV 54321<br>
-                                <a href="https://maps.google.com" class="text-decoration-none" target="_blank" rel="noopener">Get Directions</a>
-                            </address>
-                        </div>
-                    </div>
-
-                    <div class="contact-method d-flex mb-4">
-                        <div class="contact-icon bg-success rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="fas fa-phone-alt fa-lg text-white"></i>
-                        </div>
-                        <div class="contact-details ms-3">
-                            <h3 class="h5">Call Us</h3>
-                            <p class="mb-1">(555) 123-4567</p>
-                            <p class="text-muted small">Mon-Fri, 9am-5pm EST</p>
-                            <a href="tel:+15551234567" class="btn btn-sm btn-outline-success mt-1">Call Now</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-method d-flex mb-4">
-                        <div class="contact-icon bg-info rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="fas fa-envelope fa-lg text-white"></i>
-                        </div>
-                        <div class="contact-details ms-3">
-                            <h3 class="h5">Email Us</h3>
-                            <p class="mb-1">support@fitheart.com</p>
-                            <p class="text-muted small">Response within 24 hours</p>
-                            <a href="mailto:support@fitheart.com" class="btn btn-sm btn-outline-info mt-1">Email Now</a>
-                        </div>
-                    </div>
-
-                    <hr class="my-4">
-
-                    <div class="emergency-notice bg-light p-3 rounded border border-danger">
-                        <div class="d-flex align-items-start">
-                            <i class="fas fa-exclamation-triangle text-danger fa-2x me-3"></i>
-                            <div>
-                                <h3 class="h5 text-danger mb-2">Medical Emergency</h3>
-                                <p class="mb-0">If you're experiencing chest pain, shortness of breath, or other acute symptoms, please call 911 or visit your nearest emergency room immediately. Do not use this form for urgent medical needs.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <h3 class="h5 mb-3">Follow Us</h3>
-                        <div class="social-links d-flex">
-                            <a href="#" class="social-icon rounded-circle d-flex align-items-center justify-content-center me-2" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon rounded-circle d-flex align-items-center justify-content-center me-2" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon rounded-circle d-flex align-items-center justify-content-center me-2" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon rounded-circle d-flex align-items-center justify-content-center" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="calculator-section mt-5 bg-light p-4 p-md-5 rounded-4 animate__animated animate__fadeInUp">
-            <div class="row align-items-center">
-                <div class="col-md-5 mb-4 mb-md-0 text-center">
-                    <img src="images/icons/bmi-calculator.png" alt="BMI Calculator Illustration" class="img-fluid" width="300" loading="lazy">
-                </div>
-                <div class="col-md-7">
-                    <h2 class="mb-3">Heart Health Calculator</h2>
-                    <p class="lead mb-4">Check your BMI and ideal heart rate zones</p>
-
-                    <form id="bmiForm" class="row g-3 needs-validation" novalidate>
-                        <div class="col-md-6">
-                            <label for="height" class="form-label">Height (cm) *</label>
-                            <input type="number" class="form-control" id="height" min="100" max="250" required>
-                            <div class="invalid-feedback">Please enter a valid height between 100-250cm.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="weight" class="form-label">Weight (kg) *</label>
-                            <input type="number" class="form-control" id="weight" min="30" max="200" required>
-                            <div class="invalid-feedback">Please enter a valid weight between 30-200kg.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="age" class="form-label">Age *</label>
-                            <input type="number" class="form-control" id="age" min="18" max="100" required>
-                            <div class="invalid-feedback">Please enter a valid age between 18-100.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="resting-hr" class="form-label">Resting Heart Rate</label>
-                            <input type="number" class="form-control" id="resting-hr" min="40" max="120">
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary px-4 py-2">
-                                <i class="fas fa-calculator me-2"></i> Calculate Health Metrics
-                            </button>
-                        </div>
-                    </form>
-
-                    <div class="mt-4">
-                        <div id="bmiResult" class="result-display p-3 rounded mb-4" style="display:none;">
-                            <h4 class="h5 mb-3">Your Results</h4>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="metric-value" id="bmiValue">--</div>
-                                    <div class="metric-label">BMI</div>
-                                    <div class="metric-category" id="bmiCategory"></div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="metric-value" id="maxHrValue">--</div>
-                                    <div class="metric-label">Max Heart Rate</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="heart-rate-zones">
-                            <h4 class="h5 mb-3">Target Heart Rate Zones</h4>
-                            <div class="zone mb-2">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Moderate (50-70%)</span>
-                                    <span id="moderateRange">- bpm</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
-                                </div>
-                            </div>
-                            <div class="zone">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Vigorous (70-85%)</span>
-                                    <span id="vigorousRange">- bpm</span>
-                                </div>
-                                <div class="progress" style="height: 10px;">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 35%"></div>
-                                </div>
-                            </div>
-                            <p class="small text-muted mt-2">* Based on American Heart Association recommendations</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer-wave bg-dark text-white pt-5">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <img src="images/icons/heart-logo-white.png" alt="FitHeart Logo" width="100" class="mb-3">
-                    <p>Helping hearts get stronger through safe exercise.</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li class="mb-2"><a href="benefits.html" class="text-white">Exercise Benefits</a></li>
-                        <li class="mb-2"><a href="workouts.html" class="text-white">Workout Plans</a></li>
-                        <li><a href="nutrition.html" class="text-white">Nutrition Guide</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3">Connect With Us</h5>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
-                        <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4 pt-3 border-top">
-                <p class="mb-0">© 2023 FitHeart. Consult your doctor before beginning any exercise program.</p>
-            </div>
+            <p style="text-align: center;">&copy; 2023 FitHeart. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/scripts.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you, ${name}! Your message about "${subject}" has been received. We'll respond to ${email} soon.`);
+            
+            // Reset the form
+            this.reset();
+        });
+    </script>
 </body>
 </html>

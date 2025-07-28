@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitHeart | Training Programs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --primary-light: #ff6b81;
+            --secondary: #57606f;
+            --light: #f1f2f6;
+            --dark: #2f3542;
+            --success: #2ed573;
+            --warning: #ffa502;
+            --danger: #ff4757;
+            --info: #1e90ff;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 18px 0;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .training-hero {
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f8f9fa" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f8f9fa" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f9fa"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Tab Navigation */
+        .training-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 60px 0 30px;
+            position: relative;
+        }
+
+        .training-tabs::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--light);
+            z-index: 1;
+        }
+
+        .tab-btn {
+            padding: 15px 40px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--secondary);
+            position: relative;
+            z-index: 2;
+            margin: 0 5px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            background: rgba(255, 71, 87, 0.05);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--dark);
+            background: rgba(0,0,0,0.03);
+        }
+
+        /* Tab Contents */
+        .tab-content {
+            display: none;
+            padding: 30px 0;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            border-radius: 2px;
+        }
+
+        /* Program Cards */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .program-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            background: white;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .program-header {
+            padding: 20px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0.2) 0%,
+                rgba(255,255,255,0) 60%
+            );
+            transform: rotate(30deg);
+        }
+
+        .program-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .program-body {
+            padding: 25px;
+        }
+
+        .program-body p {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .exercise-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+
+        .exercise-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .exercise-list li:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-list strong {
+            color: var(--primary);
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .program-meta {
+            background: rgba(241, 242, 246, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .program-meta strong {
+            color: var(--dark);
+        }
+
+        /* Tags */
+        .skill-level, .equipment-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .beginner {
+            background-color: rgba(46, 213, 115, 0.15);
+            color: var(--success);
+        }
+
+        .intermediate {
+            background-color: rgba(255, 165, 2, 0.15);
+            color: var(--warning);
+        }
+
+        .advanced {
+            background-color: rgba(255, 71, 87, 0.15);
+            color: var(--danger);
+        }
+
+        .equipment-tag {
+            background-color: rgba(30, 144, 255, 0.15);
+            color: var(--info);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%232f3542" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%232f3542" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%232f3542"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .training-hero {
+                height: 60vh;
+                min-height: 400px;
+                background-attachment: scroll;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .training-tabs {
+                flex-direction: column;
+                align-items: stretch;
+                margin: 40px 0 20px;
+            }
+            
+            .training-tabs::before {
+                display: none;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                border-radius: 0;
+                margin: 2px 0;
+                padding: 12px 20px;
+            }
+            
+            .tab-btn.active {
+                border-bottom: none;
+                border-left: 3px solid var(--primary);
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Your existing navbar content -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="training-hero">
+        <div class="hero-content">
+            <h1>Transform Your Training</h1>
+            <p>Whether you prefer bodyweight mastery or weighted strength, we have the perfect program for your fitness journey</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Tab Navigation -->
+        <div class="training-tabs">
+            <button class="tab-btn active" data-tab="calisthenics">Calisthenics</button>
+            <button class="tab-btn" data-tab="weightlifting">Weightlifting</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <!-- Calisthenics Content -->
+        <div id="calisthenics" class="tab-content active">
+            <div class="section-title">
+                <h2>Bodyweight Mastery Programs</h2>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Beginner Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Beginner Foundation</h3>
+                        <span class="skill-level beginner">Beginner</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Build fundamental strength and control with these essential bodyweight movements. Perfect for those new to calisthenics.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Push-ups:</strong> 3 sets of 8-12 reps</li>
+                            <li><strong>Bodyweight Squats:</strong> 3 sets of 12-15 reps</li>
+                            <li><strong>Inverted Rows:</strong> 3 sets of 6-10 reps</li>
+                            <li><strong>Plank:</strong> 3 sets of 30-45 seconds</li>
+                            <li><strong>Assisted Pull-ups:</strong> 3 sets of 3-5 reps</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 3 times per week</p>
+                            <p><strong>Duration:</strong> 6-8 weeks</p>
+                            <p><strong>Equipment:</strong> Pull-up bar, resistance bands</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Intermediate Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Skill Development</h3>
+                        <span class="skill-level intermediate">Intermediate</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Develop advanced calisthenics skills and strength to take your training to the next level.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Archer Push-ups:</strong> 3 sets of 5-8 reps per side</li>
+                            <li><strong>Pistol Squats:</strong> 3 sets of 5 reps per leg</li>
+                            <li><strong>Pull-ups:</strong> 4 sets of 6-10 reps</li>
+                            <li><strong>L-sit Hold:</strong> 3 sets of 15-30 seconds</li>
+                            <li><strong>Handstand Practice:</strong> 5 minutes daily</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 4 times per week</p>
+                            <p><strong>Duration:</strong> 8-12 weeks</p>
+                            <p><strong>Equipment:</strong> Parallel bars, yoga mat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advanced Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Advanced Strength</h3>
+                        <span class="skill-level advanced">Advanced</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Master advanced moves like muscle-ups and planche progressions with this challenging routine.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Muscle-ups:</strong> 5 sets of 3-5 reps</li>
+                            <li><strong>Front Lever Progressions:</strong> 4 sets of 8-12s holds</li>
+                            <li><strong>Planche Lean:</strong> 4 sets of 15-20s</li>
+                            <li><strong>Handstand Push-ups:</strong> 4 sets of 5-8 reps</li>
+                            <li><strong>Weighted Pull-ups:</strong> 4 sets of 4-6 reps</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 5 times per week</p>
+                            <p><strong>Duration:</strong> 12+ weeks</p>
+                            <p><strong>Equipment:</strong> Rings, weight vest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weightlifting Content -->
+        <div id="weightlifting" class="tab-content">
+            <div class="section-title">
+                <h2>Strength Training Programs</h2>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Strength Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Basic Strength</h3>
+                        <span class="equipment-tag">Barbell</span>
+                        <span class="equipment-tag">Dumbbells</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Build foundational strength with these essential compound lifts. Perfect for beginners.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Barbell Squat:</strong> 4 sets of 5 reps</li>
+                            <li><strong>Bench Press:</strong> 4 sets of 5 reps</li>
+                            <li><strong>Deadlift:</strong> 3 sets of 5 reps</li>
+                            <li><strong>Overhead Press:</strong> 3 sets of 6 reps</li>
+                            <li><strong>Barbell Row:</strong> 3 sets of 8 reps</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 3-4 times per week</p>
+                            <p><strong>Duration:</strong> 8-12 weeks</p>
+                            <p><strong>Equipment:</strong> Full gym recommended</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hypertrophy Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Muscle Building</h3>
+                        <span class="equipment-tag">Full Gym</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Focus on muscle growth with this high-volume bodybuilding-style program.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Incline Dumbbell Press:</strong> 4 sets of 8-12 reps</li>
+                            <li><strong>Lat Pulldown:</strong> 4 sets of 10-12 reps</li>
+                            <li><strong>Leg Press:</strong> 4 sets of 10-15 reps</li>
+                            <li><strong>Dumbbell Shoulder Press:</strong> 3 sets of 10 reps</li>
+                            <li><strong>Bicep Curls:</strong> 3 sets of 12 reps</li>
+                            <li><strong>Tricep Pushdowns:</strong> 3 sets of 12 reps</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 5 days per week</p>
+                            <p><strong>Duration:</strong> 6-8 weeks</p>
+                            <p><strong>Equipment:</strong> Full gym required</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Power Program -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3>Power & Performance</h3>
+                        <span class="equipment-tag">Olympic</span>
+                        <span class="equipment-tag">Plyometric</span>
+                    </div>
+                    <div class="program-body">
+                        <p>Develop explosive power with Olympic lifts and plyometric exercises.</p>
+                        <ul class="exercise-list">
+                            <li><strong>Power Cleans:</strong> 5 sets of 3 reps</li>
+                            <li><strong>Push Press:</strong> 4 sets of 5 reps</li>
+                            <li><strong>Box Jumps:</strong> 4 sets of 6 reps</li>
+                            <li><strong>Front Squat:</strong> 4 sets of 6 reps</li>
+                            <li><strong>Medicine Ball Throws:</strong> 3 sets of 8 reps</li>
+                        </ul>
+                        <div class="program-meta">
+                            <p><strong>Frequency:</strong> 4 times per week</p>
+                            <p><strong>Duration:</strong> 6 weeks</p>
+                            <p><strong>Equipment:</strong> Olympic barbell, boxes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p style="text-align: center;">&copy; 2023 FitHeart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Tab Functionality with Smooth Transitions
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.style.opacity = '0.7';
+                });
+                
+                // Add active class to clicked button with animation
+                this.classList.add('active');
+                this.style.opacity = '1';
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(c => {
+                    c.style.opacity = '0';
+                    setTimeout(() => {
+                        c.classList.remove('active');
+                    }, 300);
+                });
+                
+                // Show corresponding content with fade effect
+                const tabId = this.getAttribute('data-tab');
+                setTimeout(() => {
+                    const activeTab = document.getElementById(tabId);
+                    activeTab.classList.add('active');
+                    setTimeout(() => {
+                        activeTab.style.opacity = '1';
+                    }, 50);
+                }, 300);
+            });
+        });
+
+        // Add hover effect to program cards
+        document.querySelectorAll('.program-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

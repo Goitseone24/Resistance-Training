@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart-Healthy Nutrition | FitHeart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+            <div class="container">
+                <a class="navbar-brand pulse-animation" href="index.html">
+                    <img src="images/icons/heart-logo.png" alt="FitHeart Logo" width="100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="benefits.html">Benefits</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="workoutsDropdown" role="button" data-bs-toggle="dropdown">
+                                Workouts
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="workouts.html">All Workouts</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="workouts/calisthenics.html">Calisthenics</a></li>
+                                <li><a class="dropdown-item" href="workouts/weightlifting.html">Weightlifting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="nutrition.html">Nutrition</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Nutrition Hero Section -->
+    <section class="nutrition-hero parallax" style="background-image: url('images/backgrounds/nutrition-bg.jpg')">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="display-3 animate__animated animate__fadeInDown">Heart-Healthy Nutrition</h1>
+                    <p class="lead animate__animated animate__fadeInUp">Fuel your heart with science-backed dietary choices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Main Content -->
+    <main class="container py-5">
+        <section class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/nutrition/mediterranean-diet.jpg" alt="Mediterranean Diet Foods" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="text-primary mb-4">The Mediterranean Approach</h2>
+                    <div class="nutrition-stats d-flex mb-4">
+                        <div class="stat-card me-3">
+                            <div class="stat-value">30%</div>
+                            <div class="stat-label">Lower heart disease risk</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">8-10</div>
+                            <div class="stat-label">mmHg BP reduction</div>
+                        </div>
+                    </div>
+                    <ul class="nutrition-list">
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Rich in omega-3 fatty acids</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> High in antioxidants</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Low in processed foods</li>
+                    </ul>
+                    <div class="study-reference mt-4 p-3 bg-light rounded">
+                        <h4>Clinical Evidence</h4>
+                        <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1800389" 
+                           target="_blank" 
+                           class="btn btn-sm btn-outline-primary">
+                           New England Journal of Medicine Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Essential Heart-Healthy Foods</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="food-card p-4 h-100">
+                        <img src="images/nutrition/fatty-fish.jpg" alt="Fatty Fish" class="img-fluid rounded mb-3">
+                        <h3>Fatty Fish</h3>
+                        <p>Salmon, mackerel, and sardines rich in omega-3s</p>
+                        <p class="text-muted small">2-3 servings per week recommended</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-card p-4 h-100">
+                        <img src="images/nutrition/leafy-greens.jpg" alt="Leafy Greens" class="img-fluid rounded mb-3">
+                        <h3>Leafy Greens</h3>
+                        <p>Kale, spinach, and collards packed with vitamin K</p>
+                        <p class="text-muted small">1-2 servings daily</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="food-card p-4 h-100">
+                        <img src="images/nutrition/berries.jpg" alt="Berries" class="img-fluid rounded mb-3">
+                        <h3>Berries</h3>
+                        <p>Antioxidant powerhouses that reduce inflammation</p>
+                        <p class="text-muted small">1/2 cup daily</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light p-5 rounded-4">
+            <h2 class="text-center mb-4">Sample Meal Plan</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="meal-plan-card p-4 h-100">
+                        <h3 class="text-primary"><i class="fas fa-sun me-2"></i> Breakfast</h3>
+                        <ul class="meal-list">
+                            <li>Greek yogurt with blueberries and walnuts</li>
+                            <li>Whole grain toast with avocado</li>
+                            <li>Green tea</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="meal-plan-card p-4 h-100">
+                        <h3 class="text-primary"><i class="fas fa-utensils me-2"></i> Lunch</h3>
+                        <ul class="meal-list">
+                            <li>Grilled salmon salad with mixed greens</li>
+                            <li>Quinoa and chickpea mix</li>
+                            <li>Olive oil dressing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="meal-plan-card p-4 h-100">
+                        <h3 class="text-primary"><i class="fas fa-moon me-2"></i> Dinner</h3>
+                        <ul class="meal-list">
+                            <li>Baked chicken with roasted vegetables</li>
+                            <li>Brown rice pilaf</li>
+                            <li>Steamed broccoli</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="meal-plan-card p-4 h-100">
+                        <h3 class="text-primary"><i class="fas fa-apple-alt me-2"></i> Snacks</h3>
+                        <ul class="meal-list">
+                            <li>Handful of almonds</li>
+                            <li>Carrot and celery sticks</li>
+                            <li>Dark chocolate (70%+)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wave bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="images/icons/heart-logo-white.png" alt="FitHeart Logo" width="100" class="mb-3">
+                    <p>Helping hearts get stronger through safe exercise and nutrition.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="benefits.html" class="text-white">Exercise Benefits</a></li>
+                        <li class="mb-2"><a href="workouts.html" class="text-white">Workout Plans</a></li>
+                        <li><a href="nutrition.html" class="text-white">Nutrition Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">© 2023 FitHeart. Consult your doctor before beginning any new diet or exercise program.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
